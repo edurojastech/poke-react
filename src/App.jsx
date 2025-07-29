@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import PokemonCard from './components/PokemonCard';
+import PokemonModal from './components/PokemonModal';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [pokemons, setPokemons] = useState([]);
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
+  const [sortAsc, setSortAsc] = useState(true);
+
+  useEffect(() => {
+    const fetchPokemons = async () => {
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
+      const data = await response.json();
+
+      const detailedPokemons = await Promise.all(
+        data.results.map(async (p) => {
+          const res = await fetch(p.url);
+          const detail = await res.json();
+          return {
+            name: detail.name,
+            image: detail.sprites.front_default,
+            types: detail.types.map((t) => t.type.name),
+            abilities: detail.abilities.map((a) => a.ability.name),
+            power: Math.floor(Math.random() * 100) + 1, // valor fictício
+          };
+        })
+      );
+      setPokemons(detailedPokemons);
+    };
+    fetchPokemons();
+  }, []);
+
+  const sortedPokemons = [...pokemons].sort((a, b) =>
+    sortAsc ? a.power - b.power : b.power - a.power
+  );
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="container py-5">
+      <h1 className="text-center cyberpunk-title">Pokédex Tech Cyberpunk</h1>
+      <div className="text-center mb-4">
+        <button
+          className="btn btn-outline-light"
+          onClick={() => setSortAsc(!sortAsc)}
+        >
+          Ordenar por Força: {sortAsc ? 'Crescente' : 'Decrescente'}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <div className="row">
+        {sortedPokemons.map((pokemon, i) => (
+          <div className="col-md-3 mb-4" key={i}>
+            <PokemonCard pokemon={pokemon} onClick={() => setSelectedPokemon(pokemon)} />
+          </div>
+        ))}
+      </div>
+      {selectedPokemon && (
+        <PokemonModal pokemon={selectedPokemon} onClose={() => setSelectedPokemon(null)} />
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
