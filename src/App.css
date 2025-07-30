@@ -1,5 +1,9 @@
 body {
-  background: linear-gradient(135deg, #0b1424, #087a6b);
+  background-image: url('./assets/poke-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #ffffff;
   font-family: 'Orbitron', sans-serif;
 }
