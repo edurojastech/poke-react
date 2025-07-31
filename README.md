@@ -1,12 +1,57 @@
-# React + Vite
+# ⚡ Pokédex Tech Cyberpunk
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma Pokédex visualmente estilizada com tema **cyberpunk + anime Pokémon**, construída com **React.js (JavaScript puro)**, **Bootstrap** e a **PokéAPI**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+- ✅ Listagem de Pokémons com:
+  - Nome
+  - Imagem
+  - Nível de força (valor fictício aleatório)
+- ✅ Ordenação por nível de força (crescente/decrescente)
+- ✅ Modal com detalhes do Pokémon:
+  - Nome
+  - Imagem
+  - Tipo(s)
+  - Nível de força
+  - Habilidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧩 Tecnologias Utilizadas
+
+- React.js (JavaScript)
+- Bootstrap 5
+- PokéAPI (https://pokeapi.co)
+- CSS personalizado estilo **cyberpunk tech**
+
+---
+
+## 🎨 Estilo Visual
+
+- Paleta: `#087A6B` e `#0B1424` (neon/cyberpunk)
+- Efeitos de brilho, hover com neon e sombras internas
+- Fonte sugerida: [`Orbitron`](https://fonts.google.com/specimen/Orbitron) (Sci-fi)
+
+---
+
+## 🛠️ Instalação e Uso
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/pokedex-cyberpunk.git
+cd pokedex-cyberpunk
+```
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+# ou
+npm start
+```
