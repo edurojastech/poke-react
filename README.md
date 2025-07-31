@@ -1,4 +1,4 @@
-# ⚡ Pokédex Tech Cyberpunk
+# ⚡ Pokédex Tech
 
 Uma Pokédex visualmente estilizada com tema **cyberpunk + anime Pokémon**, construída com **React.js (JavaScript puro)**, **Bootstrap** e a **PokéAPI**.
 
@@ -9,7 +9,7 @@ Uma Pokédex visualmente estilizada com tema **cyberpunk + anime Pokémon**, con
 - ✅ Listagem de Pokémons com:
   - Nome
   - Imagem
-  - Nível de força (valor fictício aleatório)
+  - Nível de força
 - ✅ Ordenação por nível de força (crescente/decrescente)
 - ✅ Modal com detalhes do Pokémon:
   - Nome
@@ -25,13 +25,13 @@ Uma Pokédex visualmente estilizada com tema **cyberpunk + anime Pokémon**, con
 - React.js (JavaScript)
 - Bootstrap 5
 - PokéAPI (https://pokeapi.co)
-- CSS personalizado estilo **cyberpunk tech**
+- CSS personalizado
 
 ---
 
 ## 🎨 Estilo Visual
 
-- Paleta: `#087A6B` e `#0B1424` (neon/cyberpunk)
+- Paleta: `#087A6B` e `#0B1424`
 - Efeitos de brilho, hover com neon e sombras internas
 - Fonte sugerida: [`Orbitron`](https://fonts.google.com/specimen/Orbitron) (Sci-fi)
 
