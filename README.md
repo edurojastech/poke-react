@@ -1,6 +1,6 @@
 # ⚡ Pokédex Tech
 
-Uma Pokédex visualmente estilizada com tema **cyberpunk + anime Pokémon**, construída com **React.js (JavaScript puro)**, **Bootstrap** e a **PokéAPI**.
+Uma Pokédex visualmente estilizada com tema (CSS personalizado) **cyberpunk + anime Pokémon**, construída com **React.js (JavaScript puro)**, **Bootstrap**, **Vite** e a **PokéAPI**.
 
 ---
 
