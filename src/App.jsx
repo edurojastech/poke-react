@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PokemonCard from './components/PokemonCard';
 import PokemonModal from './components/PokemonModal';
@@ -22,7 +22,7 @@ function App() {
       <nav className='text-center' style={{ backgroundColor:'#10141f'}}>
         <h1 className="text-center cyberpunk-title py-3">Poké Tech</h1>
       </nav>
-      <div className="container py-5">
+      <div className="container">
        
         <div className="text-center mb-4">
           <button
@@ -34,7 +34,7 @@ function App() {
         </div>
         <div className="row">
           {sortedPokemons.map((pokemon, i) => (
-            <div className="col-md-3 mb-4" key={i}>
+            <div className="col-md-3 col-6 mb-4" key={i}>
               <PokemonCard pokemon={pokemon} onClick={() => setSelectedPokemon(pokemon)} />
             </div>
           ))}

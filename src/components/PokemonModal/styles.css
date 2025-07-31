@@ -1,4 +1,16 @@
 .cardCustom {
   background: linear-gradient(135deg, #0b1424, #087a6b);
-  border: '6px solid #1f2937';
+  margin-bottom: -30px;
+}
+
+.lead {
+  font-family: 'Inter', sans-serif;
+}
+
+.lead span {
+  font-weight: bold;
+}
+
+.modal-content {
+  border-radius: 40px !important;
 }
